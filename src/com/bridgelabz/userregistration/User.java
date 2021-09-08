@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class User {
 
-	public static boolean checkFirstName(String firstName) {
+	public static boolean checkName(String firstName) {
 
 		String regularExpression = "[A-Z]+[a-zA-Z\\ ]{2,}";
 		return firstName.matches(regularExpression);
@@ -19,10 +19,10 @@ public class User {
 		do{
 			System.out.print("Enter your First Name (*First letter in block and minimum 3 characters): ");
 			firstName = scanner.nextLine();
-			if(!checkFirstName(firstName))
+			if(!checkName(firstName))
 				System.out.println("Invalid Name!");
 			
-		}while(!checkFirstName(firstName));
+		}while(!checkName(firstName));
 		scanner.close();
 	}
 }
