@@ -24,10 +24,10 @@ public class User {
 
 	public static boolean checkPassword(String password) {
 
-		String regularExpression = "(?=.*[a-z])(?=.*[A-Z]).{8,}";
+		String regularExpression = "((?=.*[0-9])+(?=.*[A-Z])).{8,}";
 		return password.matches(regularExpression);
 	}
-
+	
 	public static void main(String[] args) {
 
 		Scanner scanner = new Scanner(System.in);
