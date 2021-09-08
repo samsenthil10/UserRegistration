@@ -15,14 +15,23 @@ public class User {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("----------Welcome to User Registration Portal----------");
 		System.out.println();
-		String firstName;
+		String firstName, lastName;
 		do{
 			System.out.print("Enter your First Name (*First letter in block and minimum 3 characters): ");
 			firstName = scanner.nextLine();
 			if(!checkName(firstName))
-				System.out.println("Invalid Name!");
+				System.out.println("Invalid First Name!");
 			
 		}while(!checkName(firstName));
+		
+		do{
+			System.out.print("Enter your Last Name (*First letter in block and minimum 3 characters): ");
+			lastName = scanner.nextLine();
+			if(!checkName(lastName))
+				System.out.println("Invalid Last Name!");
+			
+		}while(!checkName(lastName));
+		
 		scanner.close();
 	}
 }
