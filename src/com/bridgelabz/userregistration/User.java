@@ -24,7 +24,7 @@ public class User {
 
 	public static boolean checkPassword(String password) {
 
-		String regularExpression = "((?=.*[0-9])+(?=.*[A-Z])).{8,}";
+		String regularExpression = "^(?=.*[0-9])(?=.*[A-Z])(?=.{8,}$)[0-9a-zA-Z]*[@#$%_][0-9a-zA-Z]*$";
 		return password.matches(regularExpression);
 	}
 	
@@ -75,6 +75,8 @@ public class User {
 			System.out.println();
 			System.out.println("Minimum 8 characters");
 			System.out.println("Atleast one Upper Case Letter");
+			System.out.println("Atleast one Numeric Value");
+			System.out.println("Exactly one Special Character from @ # $ % _");
 			System.out.print("Enter your Password: ");
 			password = scanner.nextLine();
 			if(!checkPassword(password))
