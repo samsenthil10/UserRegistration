@@ -24,7 +24,7 @@ public class User {
 
 	public static boolean checkPassword(String password) {
 
-		String regularExpression = ".{8,}";
+		String regularExpression = "(?=.*[a-z])(?=.*[A-Z]).{8,}";
 		return password.matches(regularExpression);
 	}
 
@@ -32,9 +32,9 @@ public class User {
 
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("----------Welcome to User Registration Portal----------");
-		System.out.println();
 		String firstName, lastName , email, phoneNumber, password;
 		do{
+			System.out.println();
 			System.out.print("Enter your First Name (*First letter in block and minimum 3 characters): ");
 			firstName = scanner.nextLine();
 			if(!checkName(firstName))
@@ -43,6 +43,7 @@ public class User {
 		}while(!checkName(firstName));
 
 		do{
+			System.out.println();
 			System.out.print("Enter your Last Name (*First letter in block and minimum 3 characters): ");
 			lastName = scanner.nextLine();
 			if(!checkName(lastName))
@@ -51,6 +52,7 @@ public class User {
 		}while(!checkName(lastName));
 
 		do{
+			System.out.println();
 			System.out.print("Enter your Email: ");
 			email = scanner.nextLine();
 			if(!checkEmail(email))
@@ -59,6 +61,7 @@ public class User {
 		}while(!checkEmail(email));
 
 		do{
+			System.out.println();
 			System.out.print("Enter your Phone Number: ");
 			phoneNumber = scanner.nextLine();
 			if(!checkPhoneNumber(phoneNumber))
@@ -67,8 +70,11 @@ public class User {
 		}while(!checkPhoneNumber(phoneNumber));
 
 		do{
+			System.out.println();
 			System.out.println("Password Rules:");
+			System.out.println();
 			System.out.println("Minimum 8 characters");
+			System.out.println("Atleast one Upper Case Letter");
 			System.out.print("Enter your Password: ");
 			password = scanner.nextLine();
 			if(!checkPassword(password))
