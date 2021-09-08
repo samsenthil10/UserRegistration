@@ -22,12 +22,18 @@ public class User {
 		return phoneNumber.matches(regularExpression);
 	}
 
+	public static boolean checkPassword(String password) {
+
+		String regularExpression = ".{8,}";
+		return password.matches(regularExpression);
+	}
+
 	public static void main(String[] args) {
 
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("----------Welcome to User Registration Portal----------");
 		System.out.println();
-		String firstName, lastName , email, phoneNumber;
+		String firstName, lastName , email, phoneNumber, password;
 		do{
 			System.out.print("Enter your First Name (*First letter in block and minimum 3 characters): ");
 			firstName = scanner.nextLine();
@@ -59,6 +65,16 @@ public class User {
 				System.out.println("Invalid Phone Number!");
 
 		}while(!checkPhoneNumber(phoneNumber));
+
+		do{
+			System.out.println("Password Rules:");
+			System.out.println("Minimum 8 characters");
+			System.out.print("Enter your Password: ");
+			password = scanner.nextLine();
+			if(!checkPassword(password))
+				System.out.println("Invalid Password!");
+
+		}while(!checkPassword(password));
 
 		scanner.close();
 	}
